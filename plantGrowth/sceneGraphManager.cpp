@@ -1,14 +1,17 @@
 #include "precomp.h"
 #include "sceneGraphManager.h"
-#include "sceneNode.h"
+#include "renderEngine.h"
+#include "sceneGraph.h"
 
-SceneGraphManager::SceneGraphManager()
+using namespace std;
+
+SceneGraphManager* SceneGraphManager::s_sceneGraphManager = NULL;
+
+SceneGraphManager::SceneGraphManager(shared_ptr<const IRenderEngine>& pRenderEngine) : m_pRenderEngine(pRenderEngine), m_pSceneGraph(new SceneGraph())
 {
-	m_pRoot = new SceneNode();
 }
 
-SceneNode& SceneGraphManager::root() const
+void SceneGraphManager::Initialize(shared_ptr<const IRenderEngine>& pRenderEngine)
 {
-	assert(m_pRoot != NULL);
-	return *m_pRoot;
+	s_sceneGraphManager = new SceneGraphManager(pRenderEngine);
 }

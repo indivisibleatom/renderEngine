@@ -23,7 +23,7 @@ void SceneNode::render()
 	}
 }
 
-void SceneNode::addChild(auto_ptr<SceneNode> pChild)
+void SceneNode::addChild(unique_ptr<SceneNode> pChild)
 {
 	m_pChildNodes.push_back(pChild.release());
 }

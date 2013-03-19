@@ -3,17 +3,21 @@
 
 #include "sceneNode.h"
 
+class IDrawable;
+
 class GeometryNode : public SceneNode
 {
 private:
-	typedef std::list<Drawable> DrawableList;
-	DrawableList m_pDrawableList;
+	typedef std::list<std::unique_ptr<const IDrawable>> DrawablePtrList;
+	DrawablePtrList m_pDrawableList;
 
 public:
 	GeometryNode();
-	void addDrawable(std::auto_ptr<Drawable>& pDrawable);
+	~GeometryNode();
 
 	void render() override;
-}
+
+	void addDrawable(std::unique_ptr<const IDrawable>&& pDrawable);
+};
 
 #endif//_GEOMETRYNODE_H_

@@ -5,7 +5,6 @@ class SceneNode
 {
 private:
 	typedef std::list<SceneNode*> SceneNodeList;
-
 	SceneNodeList m_pChildNodes;
 
 public:
@@ -14,8 +13,8 @@ public:
 	virtual void update();
 	virtual void render();
 
-	void addChild(std::auto_ptr<SceneNode> pChild);
+	void addChild(std::unique_ptr<SceneNode> pChild);
 	void removeChild(SceneNode* pChild);
-}
+};
 
 #endif//_SCENENODE_H_

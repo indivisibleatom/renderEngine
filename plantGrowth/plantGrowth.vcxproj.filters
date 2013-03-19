@@ -27,6 +27,24 @@
     <ClCompile Include="factorySDL_GL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sceneGraphManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="geometryNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="drawable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="transformNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneGraph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="renderEngine.h">
@@ -42,6 +60,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="renderEngineSDL_GL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneGraphManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="geometryNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="transformNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sceneGraph.h">

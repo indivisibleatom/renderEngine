@@ -1,5 +1,6 @@
 #include "precomp.h"
 #include "geometryNode.h"
+#include "drawable.h"
 
 using namespace std;
 
@@ -7,14 +8,19 @@ GeometryNode::GeometryNode()
 {
 }
 
-void GeometryNode::addDrawable(auto_ptr<Drawable>& pDrawable)
+GeometryNode::~GeometryNode()
 {
-	m_pDrawableList.push_back(pDrawable.release());
+	m_pDrawableList.clear();
+}
+
+void GeometryNode::addDrawable(unique_ptr<const IDrawable>&& pDrawable)
+{
+	m_pDrawableList.push_back(move(pDrawable));
 }
 
 void GeometryNode::render()
 {
-	for (DrawableList::const_iterator i = m_pDrawableList.cbegin(); i != m_pDrawableList.cend(); i++)
+	for (DrawablePtrList::const_iterator i = m_pDrawableList.cbegin(); i != m_pDrawableList.cend(); i++)
 	{
 		(*i)->render();
 	}

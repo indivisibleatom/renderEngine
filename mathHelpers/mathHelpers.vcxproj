@@ -11,23 +11,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1B182149-1968-4862-B709-E82E127AFAA7}</ProjectGuid>
-    <Keyword>Win32Proj</Keyword>
-    <RootNamespace>src</RootNamespace>
+    <ProjectGuid>{4E21A9E3-914B-4F50-8860-269887C39A23}</ProjectGuid>
+    <RootNamespace>mathHelpers</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -39,69 +38,36 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Mukul\Desktop\SBS\plantGrowth\external\include;C:\Users\Mukul\Desktop\SBS\plantGrowth\src\mathHelpers\matrix\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Mukul\Desktop\SBS\plantGrowth\src\mathHelpers\matrix\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Mukul\Desktop\SBS\plantGrowth\src\Debug;C:\Users\Mukul\Desktop\SBS\plantGrowth\external\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>mathHelpers.lib; SDL.lib; SDLmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="drawable.cpp" />
-    <ClCompile Include="eventManagerSDL_GL.cpp" />
-    <ClCompile Include="geometryNode.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="factorySDL_GL.cpp" />
-    <ClCompile Include="renderEngineSDL_GL.cpp" />
-    <ClCompile Include="sceneGraph.cpp" />
-    <ClCompile Include="sceneGraphManager.cpp" />
-    <ClCompile Include="sceneNode.cpp" />
-    <ClCompile Include="transformNode.cpp" />
+    <ClCompile Include="matrix\src\Matrices.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="drawable.h" />
-    <ClInclude Include="eventManager.h" />
-    <ClInclude Include="eventManagerSDL_GL.h" />
-    <ClInclude Include="geometryNode.h" />
-    <ClInclude Include="precomp.h" />
-    <ClInclude Include="renderEngine.h" />
-    <ClInclude Include="renderEngineSDL_GL.h" />
-    <ClInclude Include="sceneGraph.h" />
-    <ClInclude Include="sceneGraphManager.h" />
-    <ClInclude Include="sceneNode.h" />
-    <ClInclude Include="transformNode.h" />
+    <ClInclude Include="matrix\inc\Matrices.h" />
+    <ClInclude Include="matrix\inc\Vectors.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,17 +1,22 @@
 #ifndef _SCENEGRAPHMANAGER_H_
 #define _SCENEGRAPHMANAGER_H_
 
-class SceneNode;
+class IRenderEngine;
+class SceneGraph;
 
 class SceneGraphManager
 {
 private:
-	SceneNode* m_pRoot;
+	std::shared_ptr<const IRenderEngine> m_pRenderEngine;
+	std::unique_ptr<SceneGraph> m_pSceneGraph;
+
+	static SceneGraphManager* s_sceneGraphManager;
+
+	explicit SceneGraphManager(std::shared_ptr<const IRenderEngine>& pRenderEngine);
 
 public:
-	SceneGraphManager();
+	void Initialize(std::shared_ptr<const IRenderEngine>& pRenderEngine);
 
-	SceneNode& root() const;
 	void render() const;
 };
 
